@@ -23,19 +23,5 @@
                     throw new ArgumentException(nameof(seat));
             }
         }
-        public static Ticket GetTicket(this SeatArea seat, DateTime dateTime)
-        {
-            switch (seat)
-            {
-                case SeatArea.A:
-                    return new ATicket(dateTime);
-                case SeatArea.B:
-                    return new BTicket(dateTime);
-                case SeatArea.C:
-                    return new CTicket(dateTime);
-                default:
-                    throw new ArgumentException(nameof(seat));
-            }
-        }
     }
 }

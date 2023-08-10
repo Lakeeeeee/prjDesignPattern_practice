@@ -2,18 +2,21 @@
 
 namespace FlyWeight
 {
-    public abstract class Ticket
+    public class Ticket
     {
-        protected string Key
-        {
-            get
-            {
-                return this.PurchaseDate.Date.ToString() + this.SeatArea.ToString();
-            }
-        }
-        protected DateTime PurchaseDate { get; set; }
-        protected SeatArea SeatArea { get; set; }
+        private static readonly object LogLock = new object();
+        public readonly string Key;
+        protected readonly DateTime PurchaseDate;
+        protected readonly SeatArea SeatArea;
         protected int Price { get; set; }
+
+        public Ticket(SeatArea seatArea, DateTime purchaseDate)
+        {
+            this.SeatArea = seatArea;
+            this.PurchaseDate = purchaseDate;
+            this.Key = this.PurchaseDate.Date.ToString() + this.SeatArea.ToString();
+            this.Price = GetPrice();
+        }
 
         public int GetPrice()
         {
@@ -23,37 +26,11 @@ namespace FlyWeight
 
         public void ShowInfo(int threadId)
         {
-            Log.Information("{threadId}|{seatArea}|{purchaseDate}|{price}", threadId, SeatArea, PurchaseDate.ToUniversalTime().ToLongDateString(), Price.ToString());
-        }
+            lock (LogLock)
+            {
+                Log.Information("{threadId}|{seatArea}|{purchaseDate}|{price}", threadId, SeatArea, PurchaseDate.ToLongDateString(), Price.ToString());
+            }
 
-
-    }
-
-    public class ATicket : Ticket
-    {
-        public ATicket(DateTime dateTime)
-        {
-            this.PurchaseDate = dateTime;
-            this.SeatArea = (SeatArea)1;
-            this.Price = this.GetPrice();
-        }
-    }
-    public class BTicket : Ticket
-    {
-        public BTicket(DateTime dateTime)
-        {
-            this.PurchaseDate = dateTime;
-            this.SeatArea = (SeatArea)2;
-            this.Price = this.GetPrice();
-        }
-    }
-    public class CTicket : Ticket
-    {
-        public CTicket(DateTime dateTime)
-        {
-            this.PurchaseDate = dateTime;
-            this.SeatArea = (SeatArea)3;
-            this.Price = this.GetPrice();
         }
     }
 }
