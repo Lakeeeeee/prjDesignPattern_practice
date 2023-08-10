@@ -4,7 +4,6 @@ namespace FlyWeight
 {
     public class Ticket
     {
-        private static readonly object LogLock = new object();
         public readonly string Key;
         protected readonly DateTime PurchaseDate;
         protected readonly SeatArea SeatArea;
@@ -26,10 +25,7 @@ namespace FlyWeight
 
         public void ShowInfo(int threadId)
         {
-            lock (LogLock)
-            {
-                Log.Information("{threadId}|{seatArea}|{purchaseDate}|{price}", threadId, SeatArea, PurchaseDate.ToLongDateString(), Price.ToString());
-            }
+            Log.Information("{threadId}|{seatArea}|{purchaseDate}|{price}", threadId, SeatArea, PurchaseDate.ToLongDateString(), Price.ToString());
 
         }
     }

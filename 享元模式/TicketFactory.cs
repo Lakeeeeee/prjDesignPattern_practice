@@ -2,6 +2,7 @@
 {
     public class TicketFactory
     {
+        private static readonly object LogLock = new object();
         private readonly IDictionary<string, Ticket> tickets = new Dictionary<string, Ticket>();
         public void Search(int id, DateTime dateTime, SeatArea seatArea)
         {
@@ -12,11 +13,16 @@
         {
             string key = dateTime.Date.ToString() + seatArea.ToString();
 
-            if (!tickets.Keys.Contains(key))
+            lock (LogLock)
             {
-                tickets.Add(key, new Ticket(seatArea, dateTime.Date));
+
+                if (!tickets.Keys.Contains(key))
+                {
+                    tickets.Add(key, new Ticket(seatArea, dateTime.Date));
+                }
+                return tickets[key];
             }
-            return tickets[key];
+
         }
     }
 }

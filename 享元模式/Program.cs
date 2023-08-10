@@ -10,10 +10,10 @@ int numberOfPeople = 100;
 TicketFactory ticketFactory = new TicketFactory();
 Random rnd = new Random();
 
-for (int i = 0; i < numberOfPeople; i++)
+Parallel.For(1, numberOfPeople + 1, i =>
 {
     int area = rnd.Next(1, 4);
     ticketFactory.Search(i, DateTime.Now, (SeatArea)area);
-}
+});
 
 Console.ReadLine();
