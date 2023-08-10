@@ -5,7 +5,7 @@ using Serilog;
 Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 Log.Information("|seatArea|purchaseDate|price");
 
-//同時100人查票，查不同區域，同為今天
+//100人查票，查不同區域，同為今天
 int numberOfPeople = 100;
 TicketFactory ticketFactory = new TicketFactory();
 Random rnd = new Random();
