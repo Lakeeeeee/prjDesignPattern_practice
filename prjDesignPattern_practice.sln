@@ -13,9 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console_ToysTests", "Consol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstract_Factory", "Abstract_Factory\Abstract_Factory.csproj", "{D45DF72A-3A4F-459B-B9DD-068EBF2DBBC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyWeight", "享元模式\FlyWeight.csproj", "{CE91556C-F63F-408D-A7D9-C3EC0980B1D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlyWeight", "享元模式\FlyWeight.csproj", "{CE91556C-F63F-408D-A7D9-C3EC0980B1D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyWeightTests", "FlyWeightTests\FlyWeightTests.csproj", "{1C83213B-1990-4800-9B77-283DD5BFE67B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlyWeightTests", "FlyWeightTests\FlyWeightTests.csproj", "{1C83213B-1990-4800-9B77-283DD5BFE67B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype", "Prototype\Prototype.csproj", "{B8F812A2-603D-483F-804B-03EED56B3680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketBooth", "TicketBooth\TicketBooth.csproj", "{78D51038-CAB2-4DEA-99E2-18B5BF94523F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{1C83213B-1990-4800-9B77-283DD5BFE67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C83213B-1990-4800-9B77-283DD5BFE67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C83213B-1990-4800-9B77-283DD5BFE67B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8F812A2-603D-483F-804B-03EED56B3680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F812A2-603D-483F-804B-03EED56B3680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F812A2-603D-483F-804B-03EED56B3680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F812A2-603D-483F-804B-03EED56B3680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D51038-CAB2-4DEA-99E2-18B5BF94523F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D51038-CAB2-4DEA-99E2-18B5BF94523F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D51038-CAB2-4DEA-99E2-18B5BF94523F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D51038-CAB2-4DEA-99E2-18B5BF94523F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
